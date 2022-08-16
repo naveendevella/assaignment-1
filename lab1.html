@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+<html>
+   <head> 
+      <style>
+         #test {
+            width: 500px;
+            height:400px;
+            margin: 0px auto;
+         }
+      </style>
+      
+      <script type = "text/javascript">
+         function drawShape() {
+            var canvas = document.getElementById('mycanvas');
+
+            if (canvas.getContext) 
+            {
+               
+               var ctx = canvas.getContext('2d');
+		
+	       for(let i = 25;i<=250;i=i+25)
+               {
+		for(let j=25; j<=700; j=j+25)
+		{
+			var cr = 'rgb('+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+')';
+			//var cr = 'rgb('+Math.floor(Math.random()*256)+','+0+','+0+')';
+			ctx.fillStyle = cr;
+			ctx.fillRect(i,j,30,30);
+	       	}
+	       }
+            } 
+            else 
+            {
+               alert('Browser does not support');
+            }
+         }
+      </script>
+   </head>
+   
+   <body id = "test" onload = "drawShape();">
+   <h1> Drawing Color Checker Box </h1>
+      <canvas id = "mycanvas"></canvas>
+   </body>
+	
+</html>

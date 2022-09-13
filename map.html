@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script>
+
+function mapExample(){
+var users = [
+	{"user": "krishna"},
+	{"user": "vijay"},
+	{"user": "vasu"},
+	{"user": "venu"},
+	{"user": "rajesh"},
+	{"user": "varun"},
+	{"user": "chandra"}
+	];
+
+let resultDetails = users.map(user => {
+    let mark = Math.random() * 100;
+    user.mark = mark;
+    return user
+});
+
+
+var selectedCandidate = resultDetails.filter(user => {
+	if(user.mark > 80){
+		return user;
+    }
+});
+
+let ans = "<br>";
+
+for(let i=0;i<selectedCandidate.length;i++){
+ans = ans + "User : " + selectedCandidate[i]["user"] + "   -   Marks : " + selectedCandidate[i]["mark"] + "      ";
+}
+
+document.getElementById("mapDiv").innerHTML = ans;
+
+}
+
+</script>
+
+</head>
+
+<body>
+<button onclick="mapExample();">Map</button>
+
+<div id="mapDiv">
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script>
+
+function FilterExample(){
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length > 6);
+console.log(result);
+
+let ans = "";
+
+for(let i=0;i<result.length;i++){
+ans = ans + result[i] + "      ";
+}
+
+document.getElementById("filterDiv").innerHTML = ans;
+
+}
+
+</script>
+
+</head>
+
+<body>
+<button onclick="FilterExample();">Filter</button>
+
+<div id="filterDiv">
+
+</div>
+
+</body>
+
+</html>
